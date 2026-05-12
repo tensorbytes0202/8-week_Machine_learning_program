@@ -439,3 +439,675 @@ while True:
 
 print(students)
 ```
+
+
+# 📅 Day 3 → OOP + File Handling
+
+# 📖 Theory
+
+Object-Oriented Programming (OOP) is used to model real-world entities into code using:
+
+- Classes
+- Objects
+- Methods
+- Inheritance
+
+Large-scale applications like:
+
+- Instagram
+- Uber
+- Zomato
+- Amazon
+
+all internally use OOP concepts.
+
+---
+
+## 🌍 Real Life Example
+
+A car can be represented as:
+
+- Color
+- Brand
+- Speed
+
+These properties become attributes inside a class.
+
+---
+
+# 🔹 Classes & Objects
+
+A class is a blueprint.
+
+An object is a real instance of that blueprint.
+
+```python
+class Student:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print(self.name, self.age)
+
+s1 = Student("Aditya", 20)
+
+s1.display()
+```
+
+---
+
+# 🔹 Inheritance
+
+Inheritance allows one class to acquire properties of another class.
+
+## 🌍 Real Life Example
+
+A Dog is an Animal.  
+So Dog can inherit properties from Animal.
+
+```python
+class Animal:
+    def sound(self):
+        print("Animal Sound")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog Barks")
+
+d = Dog()
+
+d.sound()
+d.bark()
+```
+
+---
+
+# 🔹 Exception Handling
+
+Used to handle runtime errors gracefully.
+
+## 🌍 Real Life Example
+
+Banking apps should not crash if users enter invalid inputs.
+
+```python
+try:
+    a = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+```
+
+---
+
+# 🔹 File Handling
+
+Used for reading and writing files.
+
+## 🌍 Real Life Example
+
+Chat applications save messages in databases/files.
+
+```python
+file = open("demo.txt", "w")
+
+file.write("Hello Machine Learning")
+
+file.close()
+```
+
+---
+
+# 🔹 pip & Virtual Environment
+
+## 🔸 pip
+
+Used to install Python libraries.
+
+```bash
+pip install numpy
+```
+
+---
+
+## 🔸 Virtual Environment
+
+Used to isolate project dependencies.
+
+## 🌍 Real Life Example
+
+Different projects may require different library versions.
+
+```bash
+python -m venv myenv
+```
+
+---
+
+# 🔹 Important Libraries
+
+---
+
+# 🔸 os Library
+
+Used for interacting with the operating system.
+
+```python
+import os
+
+print(os.getcwd())
+```
+
+---
+
+# 🔸 json Library
+
+Used for JSON data handling.
+
+## 🌍 Real Life Example
+
+APIs mostly exchange data in JSON format.
+
+```python
+import json
+
+data = {
+    "name": "Aditya"
+}
+
+print(json.dumps(data))
+```
+
+---
+
+# 🔸 csv Library
+
+Used for CSV file operations.
+
+## 🌍 Real Life Example
+
+Excel datasets are commonly stored as CSV files.
+
+```python
+import csv
+```
+
+---
+
+# 📊 PHASE 2 — NUMPY + PANDAS + VISUALIZATION (Day 4–10)
+
+NumPy and Pandas are the backbone of Data Science and Machine Learning.
+
+Almost every ML project uses these libraries.
+
+---
+
+# 📅 Day 4–5 → NumPy
+
+# 📖 Theory
+
+NumPy is used for:
+
+- Numerical Computing
+- Matrix Operations
+- Fast Mathematical Calculations
+
+Artificial Neural Networks internally work with matrices and tensors.
+
+---
+
+## 🌍 Real Life Example
+
+Images in Computer Vision are stored as matrices of pixels.
+
+---
+
+# 🔹 Creating Arrays
+
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3])
+
+print(arr)
+```
+
+---
+
+# 🔹 Indexing & Slicing
+
+Used for accessing specific elements.
+
+```python
+arr = np.array([10, 20, 30, 40])
+
+print(arr[1:3])
+```
+
+---
+
+# 🔹 Reshaping Arrays
+
+Changes dimensions of arrays.
+
+```python
+arr = np.array([1,2,3,4,5,6])
+
+print(arr.reshape(2,3))
+```
+
+---
+
+# 🔹 Broadcasting
+
+Allows mathematical operations on arrays efficiently.
+
+```python
+arr = np.array([1,2,3])
+
+print(arr + 5)
+```
+
+---
+
+# 🔹 Vectorization
+
+Removes the need for loops and increases speed.
+
+## 🌍 Real Life Example
+
+ML models process millions of values simultaneously.
+
+```python
+arr = np.array([1,2,3])
+
+print(arr * 2)
+```
+
+---
+
+# 🔹 Matrix Multiplication
+
+Used heavily in:
+
+- Deep Learning
+- Computer Graphics
+- Neural Networks
+
+## 📌 Formula
+
+```text
+C = A × B
+```
+
+```python
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(np.dot(A, B))
+```
+
+---
+
+# 🛠 Practice Projects
+
+---
+
+# 🔹 Matrix Calculator
+
+```python
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(A + B)
+print(A - B)
+print(np.dot(A, B))
+```
+
+---
+
+# 🔹 Statistical Operations
+
+```python
+arr = np.array([1,2,3,4,5])
+
+print(np.mean(arr))
+print(np.std(arr))
+```
+
+# 📅 Day 6–7 → Pandas
+
+# 📖 Theory
+
+Pandas is used for:
+
+- Data Analysis
+- Data Cleaning
+- Data Manipulation
+
+Almost every real-world dataset is processed using Pandas.
+
+---
+
+## 🌍 Real Life Example
+
+Netflix recommendation systems analyze huge tables of user activity.
+
+---
+
+# 🔹 DataFrames
+
+DataFrames are table-like structures.
+
+## 🌍 Real Life Example
+
+Excel sheets are similar to DataFrames.
+
+```python
+import pandas as pd
+
+data = {
+    "Name": ["A", "B"],
+    "Marks": [90, 85]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+```
+
+---
+
+# 🔹 CSV Loading
+
+```python
+df = pd.read_csv("data.csv")
+```
+
+---
+
+# 🔹 Missing Values
+
+Real-world datasets often contain incomplete data.
+
+```python
+print(df.isnull().sum())
+```
+
+---
+
+# 🔹 Filtering Data
+
+```python
+print(df[df["Marks"] > 80])
+```
+
+---
+
+# 🔹 GroupBy
+
+Used for grouping similar data.
+
+## 🌍 Real Life Example
+
+E-commerce companies group products by category.
+
+```python
+print(df.groupby("Department").mean())
+```
+
+---
+
+# 🔹 Data Cleaning
+
+Cleaning bad or incomplete data.
+
+## 🌍 Real Life Example
+
+Removing duplicate users from a database.
+
+```python
+df.dropna(inplace=True)
+```
+
+---
+
+# 🛠 Projects
+
+---
+
+# 🔹 Netflix Dataset Analysis
+
+```python
+import pandas as pd
+
+df = pd.read_csv("netflix.csv")
+
+print(df.head())
+print(df.info())
+```
+
+---
+
+# 🔹 IPL Dataset Analysis
+
+```python
+df = pd.read_csv("ipl.csv")
+
+print(df["team"].value_counts())
+```
+
+---
+
+# 📅 Day 8 → Data Visualization
+
+# 📖 Theory
+
+Visualization helps understand data patterns visually.
+
+Machine Learning engineers use visualization to:
+
+- Detect trends
+- Find outliers
+- Analyze distributions
+
+---
+
+## 🌍 Real Life Example
+
+Stock market graphs and analytics dashboards use visualization.
+
+---
+
+# 🔹 Libraries
+
+- Matplotlib
+- Seaborn
+
+---
+
+# 🔹 Histogram
+
+Shows frequency distribution.
+
+```python
+import matplotlib.pyplot as plt
+
+data = [1,2,2,3,3,3,4]
+
+plt.hist(data)
+
+plt.show()
+```
+
+---
+
+# 🔹 Bar Plot
+
+Used for categorical comparisons.
+
+## 🌍 Real Life Example
+
+Comparing sales of products.
+
+```python
+x = ["A", "B", "C"]
+y = [10, 20, 30]
+
+plt.bar(x, y)
+
+plt.show()
+```
+
+---
+
+# 🔹 Heatmap
+
+Used to visualize correlations.
+
+```python
+import seaborn as sns
+import numpy as np
+
+data = np.random.rand(5,5)
+
+sns.heatmap(data)
+```
+
+---
+
+# 🔹 Pairplot
+
+Shows relationships between features.
+
+```python
+sns.pairplot(df)
+```
+
+---
+
+# 📅 Day 9–10 → Statistics for Machine Learning
+
+# 📖 Theory
+
+Statistics is the backbone of Machine Learning.
+
+ML models learn patterns from statistical relationships inside data.
+
+Without statistics:
+
+- Model evaluation becomes impossible
+- Data understanding becomes weak
+- Feature engineering becomes difficult
+
+---
+
+# 🔹 Mean
+
+Average value of data.
+
+## 🌍 Real Life Example
+
+Average marks of students.
+
+## 📌 Formula
+
+```text
+μ = Σx / N
+```
+
+```python
+import numpy as np
+
+arr = [1,2,3,4,5]
+
+print(np.mean(arr))
+```
+
+---
+
+# 🔹 Variance
+
+Measures spread of data.
+
+## 🌍 Real Life Example
+
+Difference in student performance levels.
+
+## 📌 Formula
+
+```text
+σ² = Σ(x − μ)² / N
+```
+
+```python
+print(np.var(arr))
+```
+
+---
+
+# 🔹 Standard Deviation
+
+Measures how far values are from the mean.
+
+```python
+print(np.std(arr))
+```
+
+---
+
+# 🔹 Correlation
+
+Shows relationship between variables.
+
+## 🌍 Real Life Example
+
+Study hours vs exam marks.
+
+```python
+print(df.corr())
+```
+
+---
+
+# 🔹 Probability Basics
+
+Probability measures chances of an event occurring.
+
+## 🌍 Real Life Example
+
+Weather prediction systems use probability.
+
+```python
+probability = favorable_cases / total_cases
+```
+
+---
+
+# 🔹 Standardization (Z-Score)
+
+Used to scale data before ML training.
+
+## 🌍 Real Life Example
+
+Different exam scoring systems converted to a common scale.
+
+## 📌 Formula
+
+```text
+z = (x − μ) / σ
+```
+
+```python
+from sklearn.preprocessing import StandardScaler
+import numpy as np
+
+data = np.array([[10], [20], [30]])
+
+scaler = StandardScaler()
+
+print(scaler.fit_transform(data))
+```
